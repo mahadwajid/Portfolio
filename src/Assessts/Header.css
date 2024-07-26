@@ -1,0 +1,126 @@
+body{
+  background-color: black;
+  font-family: 'Visby Round CF', sans-serif;
+}
+
+.custom-navbar-container {
+  background: #343a40;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50px;
+  max-width: 1300px;
+  margin: 0 auto;
+  margin-top: 5px;
+
+}
+
+.custom-navbar-header {
+  display: flex;
+  align-items: center;
+}
+
+.custom-navbar-brand {
+  color: white;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.mahad-text {
+  font-size: 25px; /* Increase the font size of "Mahad" as needed */
+}
+
+.khan-text {
+  color: #ffc506;
+}
+
+.custom-navbar-toggle {
+  cursor: pointer;
+  display: none;
+  margin-left: 20px; /* Adjust the margin as needed */
+}
+
+.custom-toggle-icon {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  display: block;
+}
+
+.custom-navbar-links {
+  display: flex;
+}
+
+.custom-nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.custom-navbar-links.open {
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: #343a40;
+  text-align: center;
+  border-radius: 50px;
+}
+
+.custom-scroll-link {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+/* Add any additional styling for custom-scroll-link */
+
+@media (max-width: 767px) {
+  .custom-navbar-toggle {
+    display: block;
+  }
+
+  .custom-navbar-links {
+    display: none;
+  }
+
+  .custom-navbar-links.open {
+    display: flex;
+  }
+}
+
+/* ==========Button Css================ */
+.custom-scroll-link {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  border: none;
+  background: none;
+  font-weight: bold;
+  padding: 0.2em 0.5em;
+}
+
+.custom-scroll-link::before {
+  margin-left: auto;
+}
+
+.custom-scroll-link::after,
+.custom-scroll-link::before {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #ffc506;
+  display: block;
+  transition: 0.5s;
+}
+
+.custom-scroll-link:hover::after,
+.custom-scroll-link:hover::before {
+  width: 100%;
+}
