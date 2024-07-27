@@ -1,6 +1,10 @@
 import React from 'react';
 import '../Assessts/Aboutme.css';
 import img1 from '../Images/Profile5.jpg';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 function StarRating({ level }) {
     const filledStars = Math.floor(level);
@@ -39,6 +43,7 @@ function StarRating({ level }) {
   }
   
   const SkillBars = () => {
+  
     const skills = [
       { name: 'HTML', level: 3 },
       { name: 'CSS', level: 3 },
@@ -66,13 +71,18 @@ function StarRating({ level }) {
   };
   
 function Aboutme() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // Animation duration (default: 400ms)
+    });
+  }, []);
   return (
     <section className="About-container" id="aboutme">
-      <div className="Profile-Image-container">
+      <div className="Profile-Image-container" data-aos="fade-right" >
         <img src={img1} alt="Portfolio Image" />
       </div>
 
-      <div className="Paragrapgh-container">
+      <div className="Paragrapgh-container" data-aos="fade-up">
         <div className="header-row">
           <hr className="hr-style" />
           <h1>ABOUT ME</h1>
@@ -81,7 +91,7 @@ function Aboutme() {
         <p>
           Hello, I'm Mahad Wajid, a skilled MERN Stack Developer with over 1 year of expertise. I specialize in website development, creating responsive designs, and building customized web solutions using HTML, CSS, JavaScript, React JS, Node JS, and MongoDB. Let's collaborate to bring your web projects to life with seamless functionality and design.
         </p>
-        <SkillBars />
+        <SkillBars  />
       </div>
     </section>
   );
@@ -90,74 +100,4 @@ function Aboutme() {
 export default Aboutme;
 
 
-// import { useEffect, useState } from 'react';
-// import '../Assessts/Aboutme.css';
-// import img1 from '../Images/Profile5.jpg';
-
-// function Aboutme() {
-//     const [showSkills, setShowSkills] = useState(false);
-
-//     useEffect(() => {
-//         setShowSkills(true);
-//     }, []);
-
-//     return (
-//         <section className="About-container">
-//             <div className="Profile-Image-container">
-//                 <img src={img1} alt="Portfolio Image" />
-//             </div>
-
-//             <div className="Paragrapgh-container">
-//                 <div className="header-row">
-//                     <hr className="hr-style" />
-//                     <h1>ABOUT ME</h1>
-//                 </div>
-//                 <span>Who Am I</span>
-//                 <p>
-//                     Hello, I'm Mahad Wajid, a skilled MERN Stack Developer with over 1 year of expertise. I specialize in website development, creating responsive designs, and building customized web solutions using HTML, CSS, JavaScript, React JS, Node JS, and MongoDB. Let's collaborate to bring your web projects to life with seamless functionality and design.
-//                 </p>
-
-//                 <div className={`Skill-container ${showSkills ? 'show' : ''}`}>
-//                     <h2 style={{color:"white" , fontWeight:"bold"}}>Skills</h2>
-//                     <div className="Skill-bar">
-//                         <div className="Skill" style={{ width: '80%' }}>
-//                             HTML - 80%
-//                         </div>
-//                     </div>
-//                     <div className="Skill-bar">
-//                         <div className="Skill" style={{ width: '75%' }}>
-//                             CSS - 75%
-//                         </div>
-//                     </div>
-//                     <div className="Skill-bar">
-//                         <div className="Skill" style={{ width: '80%' }}>
-//                             JavaScript - 80%
-//                         </div>
-//                     </div>
-//                     <div className="Skill-bar">
-//                         <div className="Skill" style={{ width: '85%' }}>
-//                             Reactjs - 85%
-//                         </div>
-//                     </div>
-
-//                     <div className="Skill-bar">
-//                         <div className="Skill" style={{ width: '80%' }}>
-//                             Nodejs - 80%
-//                         </div>
-//                     </div>
-
-//                     <div className="Skill-bar">
-//                         <div className="Skill" style={{ width: '83%' }}>
-//                             MongoDB - 83%
-//                         </div>
-//                     </div>
-                    
-                    
-//                 </div>
-//             </div>
-//         </section>
-//     );
-// }
-
-// export default Aboutme;
 

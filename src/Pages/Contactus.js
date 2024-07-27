@@ -1,13 +1,21 @@
 import '../Assessts/Contactus.css';
 import React from 'react';
 import { FaMapMarker, FaPhone, FaEnvelope, FaGithub, FaCodepen, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 
 const Contactus = () => {
+    useEffect(() => {
+        AOS.init({
+          duration: 1200, // Animation duration (default: 400ms)
+        });
+      }, []);
 
 
     return (
-        <section id="contact">
+        <section id="contact" data-aos="fade-right">
             <h1 className="section-header">Contact</h1>
 
             <div className="contact-wrapper">

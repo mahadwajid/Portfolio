@@ -1,21 +1,30 @@
 import '../Assessts/Home.css';
 import img1 from '../Images/Profile4.png';
 import { FaGithub, FaLinkedin, FaDiscord } from 'react-icons/fa';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function Home() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // Animation duration (default: 400ms)
+    });
+  }, []);
+
   return (
     <section className="home-container" id='home'>
       <div className="Text-container">
-        <span className="Hello">Hello</span>
-        <span className="introtext">I'm
-          <span className="introname"> Mahad Wajid</span>
+        <span className="Hello" data-aos="fade-right">Hello</span>
+        <span className="introtext" data-aos="fade-right">I'm
+          <span className="introname" data-aos="fade-right"> Mahad Wajid</span>
         </span>
-        <span className="subheading">Software Engineer</span>
-        <p className="Intropara">
+        <span className="subheading" data-aos="fade-right">Software Engineer</span>
+        <p className="Intropara" data-aos="fade-right">
           As a Software Engineer and MERN stack developer, I specialize in building dynamic, full-stack web applications. My expertise spans from front-end design to back-end development, delivering seamless user experiences.
         </p>
 
-        <div className="social-icons">
+        <div className="social-icons" data-aos="fade-right">
           <a href="https://github.com/mahadwajid" target="_blank" rel="noopener noreferrer">
             <FaGithub size={32} />
           </a>
@@ -38,7 +47,7 @@ function Home() {
         </svg>
       </div>
 
-      <div className="Image-container">
+      <div className="Image-container" data-aos="fade-up">
         <img src={img1} alt="Portfolio Image" />
       </div>
     </section>
