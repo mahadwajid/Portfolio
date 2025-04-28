@@ -35,7 +35,7 @@ function Home() {
           <a href="https://github.com/mahadwajid" target="_blank" rel="noopener noreferrer">
             <FaGithub size={32} />
           </a>
-          <a href="www.linkedin.com/in/mahadwajid" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/mahadwajid/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin size={32} />
           </a>
           <a href="https://discord.com/invite/your-discord" target="_blank" rel="noopener noreferrer">
