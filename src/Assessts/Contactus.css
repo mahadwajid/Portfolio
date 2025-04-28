@@ -167,7 +167,7 @@
 .form-control,
 textarea {
   width: 100%;
-  background: rgba(0,0,0,0.7);
+  background: white;
   color: #fff;
   border: 1.5px solid #232526;
   border-radius: 7px;
