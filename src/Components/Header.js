@@ -74,7 +74,7 @@ function Header() {
           <span className="khan-text">Khan.</span>
         </div>
         <div 
-          className={`custom-navbar-toggle ${isMobileMenuOpen ? 'open' : ''}`} 
+          className={`custom-navbar-toggle ${isMobileMenuOpen ? 'open check' : ''}`} 
           onClick={toggleMobileMenu}
           aria-label="Toggle navigation menu"
         >
