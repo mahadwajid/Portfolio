@@ -3,16 +3,25 @@ import img1 from '../Images/Webdev1.jpg';
 import img2 from '../Images/Webdev2.jpg';
 import img3 from '../Images/Webdev3.jpg';
 import img4 from '../Images/Webdev5.jpg';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaCode, FaPalette, FaMobile, FaServer, FaDatabase, FaShieldAlt } from 'react-icons/fa';
 
 function Services() {
+    const [isVisible, setIsVisible] = useState(false);
+
     useEffect(() => {
         AOS.init({
             duration: 1200,
+            once: true,
+            offset: 100
         });
+
+        // Trigger visibility animation after component mounts
+        setTimeout(() => {
+            setIsVisible(true);
+        }, 500);
     }, []);
 
     const services = [
@@ -56,18 +65,31 @@ function Services() {
 
     return (
         <section className="services-container" id="services">
+            <div className="animated-background">
+                <div className="circle circle-1"></div>
+                <div className="circle circle-2"></div>
+                <div className="circle circle-3"></div>
+            </div>
+
             <div className="header-row" data-aos="fade-right">
                 <hr className="hr-style" />
                 <h1>Services</h1>
             </div>
+
             <div className="services-grid">
                 {services.map((service, index) => (
-                    <div className="service-card" key={index} data-aos="fade-up">
+                    <div 
+                        className="service-card" 
+                        key={index} 
+                        data-aos="fade-up"
+                        data-aos-delay={index * 100}
+                    >
                         <div className="service-icon">
                             {service.icon}
                         </div>
                         <h3>{service.title}</h3>
                         <p>{service.description}</p>
+                        <div className="service-hover-effect"></div>
                     </div>
                 ))}
             </div>
