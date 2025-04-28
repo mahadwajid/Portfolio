@@ -20,11 +20,9 @@ function Header() {
   return (
     <div className="custom-navbar-container">
       <div className="custom-navbar-header">
-       
-          <div className="custom-navbar-brand mahad-text">
-            Mahad <span className="khan-text">Khan.</span>
-          </div>
-        
+        <div className="custom-navbar-brand mahad-text">
+          Mahad <span className="khan-text">Khan.</span>
+        </div>
         <div className="custom-navbar-toggle" onClick={toggleMobileMenu}>
           <span className="custom-toggle-icon"></span>
           <span className="custom-toggle-icon"></span>
@@ -40,6 +38,9 @@ function Header() {
         </CustomScrollLink>
         <CustomScrollLink to="services" smooth={true} duration={50} className="custom-nav-link">
           Services
+        </CustomScrollLink>
+        <CustomScrollLink to="projects" smooth={true} duration={50} className="custom-nav-link">
+          Projects
         </CustomScrollLink>
         <CustomScrollLink to="contact" smooth={true} duration={50} className="custom-nav-link">
           Contact us

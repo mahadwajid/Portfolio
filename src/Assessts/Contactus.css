@@ -72,12 +72,12 @@
   }
   
   .list-item {
-    line-height: 4;
+    line-height: 3.5;
     color: #aaa;
   }
   
   .contact-text {
-    font: 300 18px 'Lato', sans-serif;
+    font: 300 15px 'Lato', sans-serif;
     letter-spacing: 1px;
     color: #bbb;
   }
@@ -157,11 +157,20 @@
   }
   
   /* Begin Media Queries*/
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 1200px) {
     .contact-wrapper {
-      display: flex;
-      flex-direction: column;
+      max-width: 90%;
     }
+
+    .form-horizontal {
+      max-width: 45%;
+    }
+
+    .direct-contact-container {
+      max-width: 45%;
+    }
+  }
+  
     .direct-contact-container, .form-horizontal {
       margin: 0 auto;
     }  
@@ -180,47 +189,137 @@
       height: 60px;
       line-height: 60px;
     }
+  
+  
+  @media screen and (max-width: 992px) {
+    .section-header {
+      font-size: 48px;
+      padding: 30px 0;
+    }
+
+    .form-control,
+    textarea {
+      max-width: 100%;
+    }
+
+    #Contact-button {
+      width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 850px) {
+    .contact-wrapper {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    .direct-contact-container,
+    .form-horizontal {
+      margin: 0 auto;
+    }
+
+    .form-horizontal {
+      max-width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .direct-contact-container {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+
+    .contact-list {
+      margin-left: 0;
+    }
+
+    .list-item {
+      line-height: 3;
+    }
+
+    .place,
+    .phone,
+    .gmail {
+      margin-left: 50px;
+    }
   }
   
   @media screen and (max-width: 569px) {
-  
-    .direct-contact-container, .form-wrapper {
-      float: none;
-      margin: 0 auto;
-    }  
-    .form-control, textarea {
-      
+    .section-header {
+      font-size: 36px;
+      padding: 20px 0;
+    }
+
+    .form-control,
+    textarea {
+      width: 100%;
       margin: 0 auto;
     }
-   
-    
-    .name, .email, textarea {
-      width: 280px;
-    } 
-    
-    .direct-contact-container {
-      margin-top: 60px;
-      max-width: 280px;
-    }  
-    .social-media-list {
-      left: 0;
+
+    .contact-text {
+      font-size: 16px;
     }
+
     .social-media-list li {
-      height: 55px;
-      width: 55px;
-      line-height: 55px;
-      font-size: 2rem;
+      height: 50px;
+      width: 50px;
+      line-height: 50px;
+      margin: 8px 2px;
     }
-    .social-media-list li:after {
-      width: 55px;
-      height: 55px;
-      line-height: 55px;
-    }
-    
   }
   
-  @media screen and (max-width: 410px) {
-    .send-button {
-      width: 99%;
+  @media screen and (max-width: 480px) {
+    .section-header {
+      font-size: 28px;
+      letter-spacing: 4px;
+    }
+
+    .contact-wrapper {
+      padding: 5px;
+    }
+
+    .form-horizontal {
+      margin-bottom: 30px;
+    }
+
+    .direct-contact-container {
+      margin-top: 30px;
+    }
+
+    .list-item {
+      line-height: 2.5;
+    }
+
+    .place,
+    .phone,
+    .gmail {
+      margin-left: 40px;
+    }
+
+    .social-media-list li {
+      height: 45px;
+      width: 45px;
+      line-height: 45px;
+    }
+
+    .copyright {
+      font-size: 12px;
+    }
+  }
+  
+  @media screen and (max-width: 360px) {
+    .section-header {
+      font-size: 24px;
+      letter-spacing: 3px;
+    }
+
+    .contact-text {
+      font-size: 14px;
+    }
+
+    .social-media-list li {
+      height: 40px;
+      width: 40px;
+      line-height: 40px;
     }
   }

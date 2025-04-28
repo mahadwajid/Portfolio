@@ -1,5 +1,3 @@
-
-
 .home-container {
   display: flex;
   flex-direction: row;
@@ -98,7 +96,38 @@ button:hover::after {
   transform: translate(50%, 0) scale(1.1);
 }
 
+/* View CV Button Styles */
+.button-container {
+  margin: 20px 0;
+}
 
+.view-cv-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+  border: 2px solid #ffc506;
+  color: #ffc506;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.view-cv-btn:hover {
+  background-color: #ffc506;
+  color: black;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 197, 6, 0.3);
+}
+
+.view-cv-btn svg {
+  font-size: 18px;
+}
 
 /* ===========Image Css============== */
 .Image-container {
@@ -121,49 +150,93 @@ button:hover::after {
   .home-container {
     flex-direction: column;
     height: auto;
+    padding: 20px 0;
   }
 
   .Text-container {
-    width: 100%;
-    margin: 20px;
+    width: 90%;
+    margin: 0 auto;
     height: auto;
+    text-align: center;
+    align-items: center;
+  }
+
+  .Hello {
+    font-size: 3rem;
+  }
+
+  .introtext {
+    font-size: 2rem;
+  }
+
+  .subheading {
+    font-size: 2rem;
+  }
+
+  .Intropara {
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0 10px;
   }
 
   .Image-container {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .Image-container img {
-    margin-top: -120px;
+    margin-top: 0;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+  
+  .view-cv-btn {
+    margin: 0 auto;
   }
 }
 
-/* Responsive styles for medium-sized devices (e.g., iPad Mini) */
+/* Responsive styles for medium-sized devices */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .home-container {
     flex-direction: row;
     height: auto;
+    padding: 20px;
   }
 
   .Text-container {
-    width: 100%;
-    margin: 20px;
+    width: 50%;
+    margin: 0 20px;
     height: auto;
   }
 
+  .Hello {
+    font-size: 3.5rem;
+  }
+
+  .introtext {
+    font-size: 2.2rem;
+  }
+
+  .subheading {
+    font-size: 2.2rem;
+  }
+
   .Image-container {
-    width: 100%;
+    width: 45%;
   }
 
   .Image-container img {
-    margin-top: 0px;
+    margin-top: 0;
   }
 }
 
-/* Styles for screens above 1024px width */
+/* Styles for large screens */
 @media only screen and (min-width: 1025px) {
   .home-container {
     flex-direction: row;
+    padding: 40px 0;
   }
 
   .Text-container {
@@ -173,6 +246,34 @@ button:hover::after {
 
   .Image-container {
     width: 50%;
+  }
+}
+
+/* Additional responsive styles for very small devices */
+@media only screen and (max-width: 480px) {
+  .Hello {
+    font-size: 2.5rem;
+  }
+
+  .introtext {
+    font-size: 1.8rem;
+  }
+
+  .subheading {
+    font-size: 1.8rem;
+  }
+
+  .Intropara {
+    font-size: 0.8rem;
+  }
+
+  .social-icons a {
+    font-size: 24px;
+  }
+  
+  .view-cv-btn {
+    padding: 10px 20px;
+    font-size: 14px;
   }
 }
 

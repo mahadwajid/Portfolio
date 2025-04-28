@@ -4,15 +4,22 @@
     flex-direction: row;
     width: 100%;
     background: #343a40;
+    min-height: 100vh;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
 }
 
 .Profile-Image-container {
-    width: 30%;
-    height: 65vh;
+    width: 35%;
+    max-width: 500px;
+    height: auto;
+    min-height: 400px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: 20px solid #343a40;
-    margin: 80px 150px;
+    margin: 0;
 }
 
 .Profile-Image-container img {
@@ -24,10 +31,9 @@
 
 .Paragrapgh-container {
     width: 40%;
-    height: 70vh;
-    margin-top: 80px;
-    margin-left: -90px;
-    padding: 0px;
+    max-width: 600px;
+    margin: 0;
+    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -97,15 +103,18 @@
 
 /* ===========Skills=============== */
 .skill-section {
-    margin-top: 20px;
+    margin-top: 30px;
     border: 3px solid #2b2f31;
     padding: 20px;
     background-color: #2b2f31;
+    border-radius: 5px;
 }
 
 .skills-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    justify-items: center;
 }
 
 .skill-box {
@@ -179,4 +188,118 @@
         margin-right: 0;
         margin-bottom: 20px;
     }
+}
+
+/* Responsive styles for different screen sizes */
+@media screen and (max-width: 1200px) {
+    .About-container {
+        padding: 40px 20px;
+        gap: 30px;
+    }
+
+    .Profile-Image-container {
+        width: 40%;
+    }
+
+    .Paragrapgh-container {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .About-container {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .Profile-Image-container {
+        width: 60%;
+        min-height: 350px;
+    }
+
+    .Paragrapgh-container {
+        width: 80%;
+        text-align: center;
+    }
+
+    .Paragrapgh-container .header-row {
+        justify-content: center;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .About-container {
+        padding: 30px 15px;
+    }
+
+    .Profile-Image-container {
+        width: 70%;
+        min-height: 300px;
+        border-width: 15px;
+    }
+
+    .Paragrapgh-container {
+        width: 90%;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .About-container {
+        padding: 20px 10px;
+    }
+
+    .Profile-Image-container {
+        width: 85%;
+        min-height: 250px;
+        border-width: 10px;
+    }
+
+    .Paragrapgh-container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .skills-container {
+        gap: 10px;
+    }
+
+    .skill-box {
+        width: 100%;
+    }
+}
+
+/* Skills section responsive styles */
+@media screen and (max-width: 768px) {
+  .skills-container {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .skill-box {
+    width: calc(50% - 15px);
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .skills-container {
+    gap: 10px;
+  }
+
+  .skill-box {
+    width: calc(50% - 10px);
+  }
+
+  .skill-name {
+    font-size: 14px;
+  }
 }

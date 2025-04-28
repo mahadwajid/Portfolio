@@ -6,52 +6,73 @@ import img4 from '../Images/Webdev5.jpg';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { FaCode, FaPalette, FaMobile, FaServer, FaDatabase, FaShieldAlt } from 'react-icons/fa';
 
-function Services(){
+function Services() {
     useEffect(() => {
         AOS.init({
-          duration: 1200, // Animation duration (default: 400ms)
+            duration: 1200,
         });
-      }, []);
+    }, []);
 
-      
-    return(
-        <div className="Services-container" id="services">
-          <div className="header-row" data-aos="fade-right">
-          <hr className="hr-style" />
-          <h1 style={{color:"white"}}>What Can I Do</h1>
-        </div>
-           <div class="wrapper">
+    const services = [
+        {
+            icon: <FaCode />,
+            title: "Web Development",
+            description: "Custom web applications built with modern technologies and best practices.",
+            image: img4
+        },
+        {
+            icon: <FaPalette />,
+            title: "UI/UX Design",
+            description: "Beautiful and intuitive user interfaces that enhance user experience.",
+            image: img2
+        },
+        {
+            icon: <FaMobile />,
+            title: "Responsive Design",
+            description: "Websites that work flawlessly across all devices and screen sizes.",
+            image: img3
+        },
+        {
+            icon: <FaServer />,
+            title: "Backend Development",
+            description: "Robust server-side solutions with scalable architecture.",
+            image: img1
+        },
+        {
+            icon: <FaDatabase />,
+            title: "Database Design",
+            description: "Efficient database structures optimized for performance and scalability.",
+            image: img2
+        },
+        {
+            icon: <FaShieldAlt />,
+            title: "Security Implementation",
+            description: "Advanced security measures to protect your applications and data.",
+            image: img3
+        }
+    ];
 
-        <div class="Service-container-1">
-            <div class="card border-top-yellow" data-aos="fade-right">
-                <img src={img4} alt="" />
-                <h2>Website Development</h2>
-                <p>Providing custom, user-friendly and visually appealing websites for businesses and individuals.</p>
-               <br></br>
-                <div class="explore-btn">
-                <a href="#">Explore   <i class="fa fa-arrow-right"></i></a></div>
+    return (
+        <section className="services-container" id="services">
+            <div className="header-row" data-aos="fade-right">
+                <hr className="hr-style" />
+                <h1>Services</h1>
             </div>
-            <div class="card border-top-green" data-aos="fade-up">
-                <img src={img2} alt=""  />
-                <h2>Website Redesign</h2>
-                <p>I offer Custom coded, Pixel-Perfect, Creative and Professional Websites to drive success for your business.</p>
-               <br></br>
-                <div class="explore-btn">
-                <a href="#">Explore   <i class="fa fa-arrow-right"></i></a></div>
+            <div className="services-grid">
+                {services.map((service, index) => (
+                    <div className="service-card" key={index} data-aos="fade-up">
+                        <div className="service-icon">
+                            {service.icon}
+                        </div>
+                        <h3>{service.title}</h3>
+                        <p>{service.description}</p>
+                    </div>
+                ))}
             </div>
-            <div class="card border-top-blue" data-aos="fade-left">
-                <img src={img3} alt="" />
-                <h2>Clean Code</h2>
-                <p>Simple PDFs into editable forms that can be easily filled and submitted digitally for improved efficiency.</p>
-               <br></br>
-                <div class="explore-btn">
-                <a href="#">Explore   <i class="fa fa-arrow-right"></i></a></div>
-            </div>
-        </div>
-    </div>
-        </div>
+        </section>
     );
-
 }
+
 export default Services;

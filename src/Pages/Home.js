@@ -1,6 +1,6 @@
 import '../Assessts/Home.css';
 import img1 from '../Images/Profile4.png';
-import { FaGithub, FaLinkedin, FaDiscord } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaDiscord, FaFileAlt } from 'react-icons/fa';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -11,6 +11,11 @@ function Home() {
       duration: 1200, // Animation duration (default: 400ms)
     });
   }, []);
+
+  const handleViewCV = () => {
+    // Open CV in a new tab
+    window.open('/Mahad Wajid CV.pdf.pdf', '_blank');
+  };
 
   return (
     <section className="home-container" id='home'>
@@ -24,6 +29,8 @@ function Home() {
           As a Software Engineer and MERN stack developer, I specialize in building dynamic, full-stack web applications. My expertise spans from front-end design to back-end development, delivering seamless user experiences.
         </p>
 
+      
+
         <div className="social-icons" data-aos="fade-right">
           <a href="https://github.com/mahadwajid" target="_blank" rel="noopener noreferrer">
             <FaGithub size={32} />
@@ -34,6 +41,12 @@ function Home() {
           <a href="https://discord.com/invite/your-discord" target="_blank" rel="noopener noreferrer">
             <FaDiscord size={32} />
           </a>
+        </div>
+
+        <div className="button-container" data-aos="fade-right">
+          <button className="view-cv-btn" onClick={handleViewCV}>
+            <FaFileAlt /> View CV
+          </button>
         </div>
 
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style={{ display: 'block', height: 0, width: 0 }}>
