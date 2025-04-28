@@ -7,16 +7,27 @@ import 'aos/dist/aos.css';
 
 function Home() {
   const [isVisible, setIsVisible] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   
   useEffect(() => {
     AOS.init({
       duration: 1200,
+      once: true,
+      offset: 100
     });
     
     // Trigger visibility animation after component mounts
     setTimeout(() => {
       setIsVisible(true);
     }, 500);
+
+    // Handle window resize
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const handleViewCV = () => {
@@ -47,13 +58,13 @@ function Home() {
 
         <div className="social-icons" data-aos="fade-right" data-aos-delay="1000">
           <a href="https://github.com/mahadwajid" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <FaGithub size={32} />
+            <FaGithub size={windowWidth <= 480 ? 24 : 32} />
           </a>
           <a href="https://www.linkedin.com/in/mahadwajid/" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <FaLinkedin size={32} />
+            <FaLinkedin size={windowWidth <= 480 ? 24 : 32} />
           </a>
           <a href="https://discord.com/invite/your-discord" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <FaDiscord size={32} />
+            <FaDiscord size={windowWidth <= 480 ? 24 : 32} />
           </a>
         </div>
 

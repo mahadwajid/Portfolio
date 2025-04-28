@@ -4,7 +4,20 @@ import '../Assessts/Header.css';
 
 function CustomScrollLink({ to, smooth, duration, children, onSetActive }) {
   return (
-    <ScrollLink to={to} smooth={smooth} duration={duration} className="custom-scroll-link" onSetActive={onSetActive}>
+    <ScrollLink 
+      to={to} 
+      smooth={smooth} 
+      duration={duration} 
+      className="custom-scroll-link" 
+      onSetActive={onSetActive}
+      onClick={() => {
+        // Close mobile menu when a link is clicked
+        const mobileMenu = document.querySelector('.custom-navbar-links');
+        if (mobileMenu && mobileMenu.classList.contains('open')) {
+          document.querySelector('.custom-navbar-toggle').click();
+        }
+      }}
+    >
       {children}
     </ScrollLink>
   );
@@ -14,6 +27,7 @@ function Header() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('home');
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,14 +39,27 @@ function Header() {
       }
     };
 
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      // Close mobile menu when screen size changes to desktop
+      if (window.innerWidth > 767 && isMobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [isMobileMenuOpen]);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
+    // Prevent body scroll when mobile menu is open
+    document.body.style.overflow = !isMobileMenuOpen ? 'hidden' : 'auto';
   };
 
   const handleSetActive = (to) => {
@@ -49,6 +76,7 @@ function Header() {
         <div 
           className={`custom-navbar-toggle ${isMobileMenuOpen ? 'open' : ''}`} 
           onClick={toggleMobileMenu}
+          aria-label="Toggle navigation menu"
         >
           <span className="custom-toggle-icon"></span>
           <span className="custom-toggle-icon"></span>

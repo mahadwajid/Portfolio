@@ -26,6 +26,20 @@ import {
 } from 'react-icons/si';
 
 const SkillBars = () => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const getIconSize = () => {
+        if (windowWidth <= 480) return "1.8rem";
+        if (windowWidth <= 768) return "2rem";
+        return "2.5rem";
+    };
+
     const skills = [
         { name: 'JavaScript', icon: <SiJavascript />, color: '#F7DF1E' },
         { name: 'React', icon: <FaReact />, color: '#61DAFB' },
@@ -47,7 +61,13 @@ const SkillBars = () => {
                         data-aos="fade-up"
                         data-aos-delay={index * 100}
                     >
-                        <div className="skill-icon" style={{ color: skill.color }}>
+                        <div 
+                            className="skill-icon" 
+                            style={{ 
+                                color: skill.color,
+                                fontSize: getIconSize()
+                            }}
+                        >
                             {skill.icon}
                         </div>
                         <span className="skill-name">{skill.name}</span>
@@ -60,22 +80,28 @@ const SkillBars = () => {
 
 function Aboutme() {
     const [isVisible, setIsVisible] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
         AOS.init({
             duration: 1200,
             once: true,
-            offset: 100
+            offset: windowWidth <= 768 ? 50 : 100
         });
+
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
 
         setTimeout(() => {
             setIsVisible(true);
         }, 500);
-    }, []);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, [windowWidth]);
 
     return (
         <section className="About-container" id="aboutme">
-            <div className="animated-background">
+            <div className={`animated-background ${windowWidth <= 480 ? 'reduced-opacity' : ''}`}>
                 <div className="circle circle-1"></div>
                 <div className="circle circle-2"></div>
                 <div className="circle circle-3"></div>
