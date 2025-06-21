@@ -3,11 +3,30 @@ import React, { useEffect } from 'react';
 import { FaMapMarker, FaPhone, FaEnvelope, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import emailjs from 'emailjs-com';
 
 const Contactus = () => {
     useEffect(() => {
         AOS.init({ duration: 1200 });
     }, []);
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+        emailjs.sendForm(
+            'service_moe96bi', // Service ID
+            'template_2b1bj6u', // <-- Replace with your actual EmailJS template ID
+            e.target,
+            'vpR_CrJEJlvs5UWu7' // Public Key
+        ).then(
+            (result) => {
+                alert('Message sent successfully!');
+            },
+            (error) => {
+                alert('Failed to send message, please try again.');
+            }
+        );
+        e.target.reset();
+    };
 
     return (
         <section id="contact" className="contact-section">
@@ -69,6 +88,7 @@ const Contactus = () => {
                     className="form-horizontal contact-form-side"
                     role="form"
                     data-aos="fade-left"
+                    onSubmit={sendEmail}
                 >
                     <div className="form-group">
                         <div className="col-sm-12">
