@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaCode, FaPalette, FaMobile, FaServer, FaDatabase, FaShieldAlt } from 'react-icons/fa';
+import { SiTensorflow, SiPytorch, SiPython } from 'react-icons/si';
 
 function Services() {
     const [isVisible, setIsVisible] = useState(false);
@@ -25,6 +26,12 @@ function Services() {
     }, []);
 
     const services = [
+        {
+            icon: <SiTensorflow />,
+            title: "AI/ML Solutions",
+            description: "Custom Artificial Intelligence and Machine Learning solutions including deep learning, computer vision, and data analysis using TensorFlow, PyTorch, and Python.",
+            image: img1
+        },
         {
             icon: <FaCode />,
             title: "Web Development",
@@ -55,12 +62,6 @@ function Services() {
             description: "Efficient database structures optimized for performance and scalability.",
             image: img2
         },
-        {
-            icon: <FaShieldAlt />,
-            title: "Security Implementation",
-            description: "Advanced security measures to protect your applications and data.",
-            image: img3
-        }
     ];
 
     return (

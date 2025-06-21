@@ -22,7 +22,14 @@ import {
     SiFirebase,
     SiTailwindcss,
     SiRedux,
-    SiNextdotjs
+    SiNextdotjs,
+    SiPython,
+    SiTensorflow,
+    SiPytorch,
+    SiKeras,
+    SiScikitlearn,
+    SiNumpy,
+    SiPandas
 } from 'react-icons/si';
 
 const SkillBars = () => {
@@ -41,14 +48,18 @@ const SkillBars = () => {
     };
 
     const skills = [
+        { name: 'Python', icon: <SiPython />, color: '#3776AB' },
+        { name: 'TensorFlow', icon: <SiTensorflow />, color: '#FF6F00' },
+        { name: 'PyTorch', icon: <SiPytorch />, color: '#EE4C2C' },
+        { name: 'Scikit-learn', icon: <SiScikitlearn />, color: '#F7931E' },
+        { name: 'NumPy', icon: <SiNumpy />, color: '#013243' },
+        { name: 'Pandas', icon: <SiPandas />, color: '#150458' },
         { name: 'JavaScript', icon: <SiJavascript />, color: '#F7DF1E' },
         { name: 'React', icon: <FaReact />, color: '#61DAFB' },
         { name: 'Node.js', icon: <FaNodeJs />, color: '#339933' },
         { name: 'Express', icon: <SiExpress />, color: '#000000' },
         { name: 'MongoDB', icon: <SiMongodb />, color: '#47A248' },
         { name: 'Firebase', icon: <SiFirebase />, color: '#FFCA28' },
-        { name: 'Git', icon: <FaGitAlt />, color: '#F05032' },
-        { name: 'Next.js', icon: <SiNextdotjs />, color: '#000000' }
     ];
 
     return (

@@ -4,6 +4,9 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import POSlogo from '../Images/POSlogo.jpg';
+import IDSLogo from '../Images/IDSLogo.png';
+import Image5 from '../Images/Image5.jpg';
 
 function Projects() {
     useEffect(() => {
@@ -14,28 +17,28 @@ function Projects() {
 
     const projects = [
         {
-            title: "E-Commerce Website",
-            description: "A full-stack e-commerce platform built with MERN stack. Features include user authentication, product management, shopping cart, and payment integration.",
+            title: "POS (Point of Sale Software)",
+            description: "A robust Point of Sale software product for retail businesses, featuring inventory management, sales analytics, and multi-user support.",
             technologies: ["React", "Node.js", "MongoDB", "Express", "Redux"],
-            githubLink: "https://github.com/yourusername/ecommerce",
-            liveLink: "https://your-ecommerce-site.com",
-            image: "https://via.placeholder.com/300x200" // Replace with your project image
+            githubLink: "https://github.com/mahadwajid/POS",
+            liveLink: "https://pos-seven-pink.vercel.app/login",
+            image: POSlogo
         },
         {
-            title: "Task Management App",
-            description: "A collaborative task management application with real-time updates, task assignment, and progress tracking.",
-            technologies: ["React", "Firebase", "Material-UI", "Redux"],
-            githubLink: "https://github.com/yourusername/task-manager",
-            liveLink: "https://your-task-manager.com",
-            image: "https://via.placeholder.com/300x200" // Replace with your project image
+            title: "Intrusion Detection using Deep Learning",
+            description: "A security system leveraging deep learning models to detect network intrusions and anomalies in real-time.",
+            technologies: ["Python", "TensorFlow", "Keras", "Scikit-learn"],
+            githubLink: "https://github.com/mahadwajid/idsfypnew",
+            liveLink: "https://github.com/mahadwajid/idsfypnew",
+            image: IDSLogo
         },
         {
-            title: "Portfolio Website",
-            description: "A responsive portfolio website showcasing my work and skills. Built with React and modern CSS.",
-            technologies: ["React", "CSS3", "JavaScript", "AOS"],
-            githubLink: "https://github.com/yourusername/portfolio",
-            liveLink: "https://your-portfolio.com",
-            image: "https://via.placeholder.com/300x200" // Replace with your project image
+            title: "Diabetic Care Website (Using MERN Stack)",
+            description: "A healthcare platform for diabetic patients, providing monitoring tools, educational resources, and appointment scheduling.",
+            technologies: ["React", "Node.js", "MongoDB", "Express"],
+            githubLink: "https://github.com/mahadwajid",
+            liveLink: "https://www.diabetesandobesitycare.com/",
+            image: Image5
         }
     ];
 
